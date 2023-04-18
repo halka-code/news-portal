@@ -2,11 +2,13 @@ import React from 'react';
 import titleIMG from '../../assets/logo.png'
 import moment from 'moment'
 import Marquee from "react-fast-marquee";
+import NavBar from './NavBar';
 const Hero = () => {
     let date = moment().format("MMMM D YYYY");
     let week = moment().format('dddd')
     return (
-        <div className='flex w-[90%] mx-auto justify-center flex-col items-center'>
+        <div className=''>
+            <div className="flex w-[90%] mx-auto justify-center flex-col items-center">
             <div className="">
                 <img className='w-fit mt-3' src={titleIMG} alt="" />
                 <p className='text-center text-xl mt-4 text-[#706F6F]'>Journalism Without Fear or Favor</p>
@@ -18,6 +20,9 @@ const Hero = () => {
                     I can be a React component, multiple React components, or just some text.
                 </Marquee>
             </div>
+
+            </div>
+            <NavBar/>
         </div>
     );
 };
