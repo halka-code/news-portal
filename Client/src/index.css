@@ -6,3 +6,6 @@
 body { 
     font-family: 'Exo 2', sans-serif;
 }
+.active-categories { 
+    @apply bg-[#E7E7E7] text-xl text-[#403F3F] rounded-lg ;
+}

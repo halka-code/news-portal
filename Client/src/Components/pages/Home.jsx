@@ -9,7 +9,7 @@ const Home = () => {
         <div>
             <Hero />
             <div className="grid grid-cols-5 mt-14 w-[90%] mx-auto">
-                <div className="col-span-1">
+                <div className="col-span-1 px-5">
                     <LeftNav />
                 </div>
                 <div className="col-span-3">
