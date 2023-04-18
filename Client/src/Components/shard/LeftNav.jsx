@@ -15,7 +15,7 @@ const LeftNav = () => {
             <ul className='mt-4'>
                 {/* <li className='active-categories text-center py-4'>Category 1</li> */}
                 {
-                    categories.map(category =><NavLink className={({isActive})=> isActive? 'active-categories' :''}><li className='text-lg font-bold text-left pl-6 my-2 bg-red-50 py-3' key={category.id}>{category.name}</li></NavLink> )
+                    categories.map(category =><NavLink className={({isActive})=> isActive? 'active-categories' :''}  key={category.id}><li className='text-lg font-bold text-left pl-6 my-2 bg-red-50 py-3'>{category.name}</li></NavLink> )
                 }
             </ul>
         </div>
