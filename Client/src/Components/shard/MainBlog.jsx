@@ -1,10 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { newsDataContext } from '../Context/newsContext';
+import NewsCard from './NewsCard';
 
 const MainBlog = () => {
+    const { newses } = useContext(newsDataContext); 
+    console.log(newses)
+
     return (
-        <div className='border'>
+        <div>
             <h1>This is main blog content </h1>
+            {
+                newses.map(item => <NewsCard key={item._id} news={item}/>)
+            }
         </div>
     );
 };

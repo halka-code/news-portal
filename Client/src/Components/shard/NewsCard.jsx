@@ -1,0 +1,32 @@
+import React from 'react';
+import { formatDate } from '../../Utilities/formatedDate';
+import { AiOutlineShareAlt } from 'react-icons/ai'
+import { BiBookmark } from 'react-icons/bi'
+// import { FaBookmark } from 'react-icons/fa';
+const NewsCard = ({ news }) => {
+    const { author, image_url, total_view, title, rating , details} = news;
+    return (
+        <div className='mb-4 border'>
+            <div className="title flex justify-between bg-[#F3F3F3] px-6 py-3">
+                <div className="flex items-center gap-3">
+                    <img src={author.img} className='w-[40px] h-[40px]' alt="" />
+                    <span>
+                        <h1>{author.name}</h1>
+                        <p>{formatDate(author.published_date)}</p>
+                    </span>
+                </div>
+                <div className="flex text-light items-center gap-2 text-4xl">
+                    <AiOutlineShareAlt />
+                    <BiBookmark />
+                </div>
+            </div>
+            <div className="mx-5">
+                <h1 className='text-3xl font-bold my-4'>{title}</h1>
+                <img src={image_url} alt="" />
+                <p className='text-[#706F6F] my-5'>{details.slice(0,100)}...<span className='text-orange-500 font-bold'>Read More</span></p>
+            </div>
+        </div>
+    );
+};
+
+export default NewsCard;

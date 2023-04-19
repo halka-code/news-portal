@@ -3,7 +3,6 @@ import { formatDate } from '../../Utilities/formatedDate';
 import { FaCalendar } from 'react-icons/fa';
 
 const LeftNavBlog = ({ news }) => {
-    console.log(news)
     const { image_url, title, rating, author } = news;
     // console.log(formatDate('2022-08-24 17:27:34'))
     return (

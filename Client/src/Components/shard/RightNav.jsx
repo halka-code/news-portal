@@ -9,7 +9,7 @@ import QZone3 from '../../assets/qZone3.png';
 import bg from '../../assets/bg1.png'
 const RightNav = () => {
     return (
-        <div className='ml-5'>
+        <div className='ml-5 sticky bottom-0 '>
             <h1 className=' text-2xl font-bold'>Login with</h1>
             <div className="">
                 <div className="">
