@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import facebook from '../../assets/facebook-official.svg';
 import instagram from '../../assets/instagram-icon.svg';
@@ -6,11 +6,13 @@ import twitter from '../../assets/twitter-official.svg';
 import QZone1 from '../../assets/qZone1.png';
 import QZone2 from '../../assets/qZone2.png';
 import QZone3 from '../../assets/qZone3.png';
-import bg from '../../assets/bg1.png'
+import { userContext } from '../Context/AuthContext';
 const RightNav = () => {
+    const { user } = useContext(userContext);
+
     return (
         <div className='ml-5 sticky bottom-0 '>
-            <h1 className=' text-2xl font-bold'>Login with</h1>
+            <h1 className=' text-2xl font-bold'>{user ? `Welcome ${user.displayName}` : ''}</h1>
             <div className="">
                 <div className="">
                     <button className='inline-flex items-center border-blue-600 border rounded text-blue-600 px-3 py-1 mt-3'><FaGoogle />&nbsp; Login With Google</button>
@@ -41,9 +43,9 @@ const RightNav = () => {
                     <img src={QZone3} alt="" />
                 </div>
                 <div className="bg-img text-center mt-7 text-white px-5 py-12">
-                        <h1 className='text-3xl font-bold mb-3'>Create an Amazing Newspaper</h1>
-                        <p className='text-base mb-3'>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
-                        <button className='px-4 py-2 bg-[#D72050] text-white '>Learn More </button>
+                    <h1 className='text-3xl font-bold mb-3'>Create an Amazing Newspaper</h1>
+                    <p className='text-base mb-3'>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
+                    <button className='px-4 py-2 bg-[#D72050] text-white '>Learn More </button>
                 </div>
             </div>
         </div>
