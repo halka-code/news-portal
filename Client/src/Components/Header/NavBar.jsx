@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegUserCircle } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     let navItems = [
@@ -23,7 +24,7 @@ const NavBar = () => {
                 <div className=""></div>
                 <ul className='flex gap-5 text-light font-bold'>
                     {
-                        navItems.map(item => <li key={item.url}>{item.label}</li>)
+                        navItems.map(item => <li key={item.url}><NavLink to={item.url}>{item.label}</NavLink></li>)
                     }
                 </ul>
                 <div className="flex gap-3 items-center ">
