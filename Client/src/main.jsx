@@ -5,6 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NewsContext from './Components/Context/newsContext';
 import Blog from './Components/pages/Blog';
+import Login from './Components/pages/Login';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -12,8 +13,13 @@ const router = createBrowserRouter([
   },
   {
     path: 'blog/:id',
-    element: <Blog />, 
+    element: <Blog />,
+  },
+  {
+    path: 'login',
+    element: <Login />
   }
+
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

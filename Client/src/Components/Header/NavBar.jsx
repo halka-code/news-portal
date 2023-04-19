@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaRegUserCircle } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+    const navigate = useNavigate(); 
     let navItems = [
         {
             label: 'Home',
@@ -19,7 +20,7 @@ const NavBar = () => {
     ];
 
     return (
-        <div className='w-[90%] my-4 mx-auto'>
+        <div className='w-[90%] mx-auto'>
             <div className="grid grid-cols-3 justify-items-center content-between">
                 <div className=""></div>
                 <ul className='flex gap-5 text-light font-bold'>
@@ -29,7 +30,7 @@ const NavBar = () => {
                 </ul>
                 <div className="flex gap-3 items-center ">
                     <span className='text-4xl'><FaRegUserCircle /></span>
-                    <button className='px-4 py-2 bg-black text-white font-bold rounded'>Login</button>
+                    <button onClick={()=> navigate('/login')} className='px-4 py-2 bg-black text-white font-bold rounded'>Login</button>
                 </div>
             </div>
         </div>

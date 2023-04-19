@@ -1,9 +1,8 @@
 import React from 'react';
 import NavBar from '../Header/NavBar';
-import { Link } from 'react-router-dom';
 
-const Login = () => {
-    const handelFromSubmit = (e)=> { 
+const Register = () => {
+    const handelFromSubmit = e => { 
         e.preventDefault()
     }
     return (
@@ -30,4 +29,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
