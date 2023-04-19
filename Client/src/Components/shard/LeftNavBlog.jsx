@@ -9,7 +9,7 @@ const LeftNavBlog = ({ news }) => {
     return (
         <div className='p-2 rounded-lg border my-3'>
             <img src={image_url} alt="" />
-            <p className='text-base my-2'>{title.slice(0,50)}...<span className='text-green-500'>see more</span></p>
+            <p className='text-base my-2'>{title.slice(0,50)}...<span className='text-green-500 hover:cursor-pointer'>see more</span></p>
             <div className="flex text-light justify-between">
                 <p>{rating.badge}</p>
                 <span className='flex items-center'>
