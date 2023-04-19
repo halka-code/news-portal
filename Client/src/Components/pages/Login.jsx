@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NavBar from '../Header/NavBar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { userContext } from '../Context/AuthContext';
 
 const Login = () => {
-    const handelFromSubmit = (e)=> { 
+    const { login , user } = useContext(userContext); 
+    console.log(user)
+    const navigate = useNavigate(); 
+    const handelFromSubmit = (e) => {
         e.preventDefault()
+        let email = e.target.email.value ; 
+        let password = e.target.password.value ; 
+        login(email , password)
+        .then(result => {
+            navigate('/')
+        })
+        .catch(err => {
+            console.log(err.code)
+        })
     }
     return (
         <div className='bg-[#F3F3F3]  h-screen'>

@@ -4,7 +4,6 @@ import NewsCard from './NewsCard';
 
 const MainBlog = () => {
     const { newses } = useContext(newsDataContext); 
-    console.log(newses)
 
     return (
         <div>

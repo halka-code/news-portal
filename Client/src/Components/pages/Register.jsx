@@ -1,27 +1,40 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import NavBar from '../Header/NavBar';
 import { Link } from 'react-router-dom';
 import { userContext } from '../Context/AuthContext';
-
+import { MoonLoader } from 'react-spinners'
 const Register = () => {
-    const { register  , user} = useContext(userContext);
+    const { register, user , updateName } = useContext(userContext);
+    const [loading, setLoading] = useState(false)
     const handelFromSubmit = e => {
+        setLoading(true);
         e.preventDefault()
         let form = e.target;
         const email = form.email.value;
         const name = form.name.value;
         const password = form.password.value;
-        console.log('Email', email, 'Name', name, password)
-        register(email , password)
-        .then(result => { 
-            const user = result.user ; 
-            // console.log(user); 
-        })
-        .catch(err => console.log(err.code))
+        
+        register(email, password)
+            .then(result => {
+                // const user = result.user;
+                form.reset(); 
+                updateName(name)
+                setLoading(false);
+            })
+            .catch(err => {
+                console.log(err.code)
+                form.reset()
+                setLoading(false)
+            })
     }
     console.log(user)
     return (
-        <div className='bg-[#F3F3F3]  h-screen'>
+        loading ? <div className="h-screen flex justify-center items-center">
+            <MoonLoader
+                color="#36d7b7"
+                size={60}
+            />
+        </div> : <div className='bg-[#F3F3F3]  h-screen'>
             <div className="pt-6">
                 <NavBar />
             </div>
