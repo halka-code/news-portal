@@ -4,12 +4,16 @@ import NewsCard from './NewsCard';
 
 const MainBlog = () => {
     const { newses } = useContext(newsDataContext); 
+    const [fiveBlog, setFiveBlog] = useState([]); 
+    useEffect(()=>{
+        setFiveBlog(newses.slice(0,5))
+    }, [])
 
     return (
         <div>
-            <h1>This is main blog content </h1>
+            <h1 className='text-center text-2xl font-bold my-5'>Top NEWS</h1>
             {
-                newses.map(item => <NewsCard key={item._id} news={item}/>)
+                fiveBlog.map(item => <NewsCard key={item._id} news={item}/>)
             }
         </div>
     );

@@ -9,6 +9,7 @@ import Login from './Components/pages/Login';
 import Register from './Components/pages/Register';
 import AuthContext from './Components/Context/AuthContext';
 import PrivetRoute from './Components/Privet/PrivetRoute';
+import CategoryBlog from './Components/shard/CategoryBlog';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: 'register',
     element: <Register />
+  },
+  {
+    path: 'category/:id',
+    element: <CategoryBlog />
   }
 
 ])
