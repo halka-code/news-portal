@@ -10,14 +10,17 @@ const AuthContext = ({ children }) => {
     const [user , setUser] = useState(null) ; 
 
     const register  = (email , password )=>{ 
+        setLoading(true) ;
         return createUserWithEmailAndPassword(auth , email , password)
     }
-    let updateName = (name)=> { 
+    let updateName = (name)=> {
+        // setLoading(false) 
         updateProfile(auth.currentUser , { 
             displayName: name
         })
     }
     let login = (email , password) => { 
+        setLoading(true)
         return signInWithEmailAndPassword(auth , email , password)
     }
     const logout = ()=> { 

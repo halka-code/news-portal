@@ -8,6 +8,7 @@ import LeftNavBlog from '../shard/LeftNavBlog';
 
 const Blog = () => {
     const { id } = useParams();
+
     const [news, setNews] = useState([]);
     const [singleNews, setSingleNews] = useState({});
     const [threeNews, setThreeNews] = useState([]);
@@ -18,11 +19,13 @@ const Blog = () => {
     }, [])
 
     useEffect(() => {
-        const matchingNews = news.find(item => item._id == id);
-        setThreeNews(news.slice(0,3))
-        setSingleNews(matchingNews)
-    }, [news])
-    console.log(threeNews)
+        if (news.length > 0) {
+            const matchingNews = news.find(item => item._id == id);
+            setThreeNews(news.slice(0, 3))
+            setSingleNews(matchingNews)
+        }
+    }, [news, id])
+
 
     // console.log(id)
     if (!news) {

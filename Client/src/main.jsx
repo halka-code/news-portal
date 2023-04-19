@@ -8,6 +8,7 @@ import Blog from './Components/pages/Blog';
 import Login from './Components/pages/Login';
 import Register from './Components/pages/Register';
 import AuthContext from './Components/Context/AuthContext';
+import PrivetRoute from './Components/Privet/PrivetRoute';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'blog/:id',
-    element: <Blog />,
+    element: <PrivetRoute><Blog /></PrivetRoute>,
   },
   {
     path: 'login',

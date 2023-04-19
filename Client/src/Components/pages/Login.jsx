@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import NavBar from '../Header/NavBar';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { userContext } from '../Context/AuthContext';
 import { useState } from 'react';
 import { MoonLoader } from 'react-spinners';
@@ -8,8 +8,11 @@ import { MoonLoader } from 'react-spinners';
 const Login = () => {
     const { login, user, loading } = useContext(userContext);
     const [loader, setLoading] = useState(false);
-
-    console.log(user)
+    const location = useLocation(); 
+    // console.log()
+    let goTo = location.state?.from?.pathname || '/';
+    console.log(goTo) 
+    // console.log(user )
     const navigate = useNavigate();
     const handelFromSubmit = (e) => {
         setLoading(true);
@@ -19,7 +22,7 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 setLoading(false)
-                navigate('/')
+                navigate(goTo , {replace : true})
             })
             .catch(err => {
                 console.log(err.code)
