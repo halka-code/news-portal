@@ -7,6 +7,7 @@ import NewsContext from './Components/Context/newsContext';
 import Blog from './Components/pages/Blog';
 import Login from './Components/pages/Login';
 import Register from './Components/pages/Register';
+import AuthContext from './Components/Context/AuthContext';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,7 +30,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <NewsContext>
-      <RouterProvider router={router} />
+      <AuthContext>
+        <RouterProvider router={router} />
+      </AuthContext>
     </NewsContext>
   </React.StrictMode>,
 )
