@@ -5,6 +5,7 @@ import Hero from '../Header/Hero';
 import { BiLeftArrow } from 'react-icons/bi';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import LeftNavBlog from '../shard/LeftNavBlog';
+import { FadeLoader } from 'react-spinners';
 
 const Blog = () => {
     const { id } = useParams();
@@ -29,7 +30,7 @@ const Blog = () => {
 
     // console.log(id)
     if (!news) {
-        return <h1>Loading........</h1>
+        return <div className='h-screen flex justify-center items-center'><FadeLoader color='#36d7b7'></FadeLoader></div>
     }
     // const { image_url, title, details } = singleNews;
     return (

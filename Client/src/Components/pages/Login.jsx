@@ -3,7 +3,7 @@ import NavBar from '../Header/NavBar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { userContext } from '../Context/AuthContext';
 import { useState } from 'react';
-import { MoonLoader } from 'react-spinners';
+import { FadeLoader, MoonLoader } from 'react-spinners';
 
 const Login = () => {
     const { login, user, loading } = useContext(userContext);
@@ -11,7 +11,7 @@ const Login = () => {
     const location = useLocation(); 
     // console.log()
     let goTo = location.state?.from?.pathname || '/';
-    console.log(goTo) 
+    // console.log(goTo) 
     // console.log(user )
     const navigate = useNavigate();
     const handelFromSubmit = (e) => {
@@ -35,7 +35,7 @@ const Login = () => {
         }
     }, [user, navigate])
     if (loading) {
-        return <h1>Please wait</h1>
+        return <div className='h-screen flex justify-center items-center'><FadeLoader color='#36d7b7'/></div>
     }
 
     return (
