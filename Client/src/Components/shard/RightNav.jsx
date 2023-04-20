@@ -8,15 +8,32 @@ import QZone2 from '../../assets/qZone2.png';
 import QZone3 from '../../assets/qZone3.png';
 import { userContext } from '../Context/AuthContext';
 const RightNav = () => {
-    const { user } = useContext(userContext);
-
+    const { user, handelGoogleLogin, githubHandler } = useContext(userContext);
+    const googleHandler = () => {
+        handelGoogleLogin()
+            .then(() => { })
+            .catch(err => console.log(err))
+    }
+    const GithubHandler = () => {
+        githubHandler()
+            .then(() => { })
+            .catch(err => console.log(err))
+    }
     return (
         <div className='ml-5 sticky bottom-0 '>
-            <h1 className=' text-2xl font-bold'>{user ? `Welcome ${user.displayName}` : ''}</h1>
             <div className="">
                 <div className="">
-                    <button className='inline-flex items-center border-blue-600 border rounded text-blue-600 px-3 py-1 mt-3'><FaGoogle />&nbsp; Login With Google</button>
-                    <button className='inline-flex items-center border-black mt-3 border rounded text-black px-3 py-1'><FaGithub />&nbsp; Login With Google</button>
+
+                    {
+                        user ? <div className="">
+                            <h1 className=' text-2xl font-bold'>{user ? `Welcome ${user.displayName}` : ''}</h1>
+                            <p className='my-9'>Visit Daily for latest Newses</p>
+                        </div> :
+                            <>
+                                <button onClick={googleHandler} className='inline-flex items-center border-blue-600 border rounded text-blue-600 px-3 py-1 mt-3'><FaGoogle />&nbsp; Login With Google</button>
+                                <button onClick={GithubHandler} className='inline-flex items-center border-black mt-3 border rounded text-black px-3 py-1'><FaGithub />&nbsp; Login With Google</button>
+                            </>
+                    }
                 </div>
                 <div className="">
                     <h1 className='text-3xl my-6 '>Find Us On</h1>

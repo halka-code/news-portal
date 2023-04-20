@@ -26,7 +26,7 @@ const NewsCard = ({ news }) => {
             <div className="mx-5">
                 <h1 className='text-3xl font-bold my-4'>{title}</h1>
                 <img loading='lazy' src={image_url} alt="" />
-                <p className='text-[#706F6F] my-5'>{details.slice(0, 100)}...<span onClick={()=>navigate(`blog/${_id}`)} className='text-orange-500 hover:cursor-pointer font-bold'>Read More</span></p>
+                <p className='text-[#706F6F] my-5'>{details.slice(0, 100)}...<span onClick={()=>navigate(`/blog/${_id}`)} className='text-orange-500 hover:cursor-pointer font-bold'>Read More</span></p>
                 <div className="flex justify-between mb-4">
                     <p className='text-xl text-orange-400 flex items-center'><BiStar /><BiStar /><BiStar /><BiStar /><BiStar /> <span className='text-black ml-2'>{rating.number}</span></p>
                     <p className='inline-flex items-center gap-1'><FaEye /> {total_view}</p>
