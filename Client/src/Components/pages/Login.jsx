@@ -25,18 +25,15 @@ const Login = () => {
                 navigate(goTo , {replace : true})
             })
             .catch(err => {
-                console.log(err.code)
                 setLoading(false);
+                console.log(err.code)
             })
     }
     useEffect(() => {
         if (user) {
             navigate('/')
         }
-    }, [user, navigate])
-    if (loading) {
-        return <div className='h-screen flex justify-center items-center'><FadeLoader color='#36d7b7'/></div>
-    }
+    }, [user, navigate]) ; 
 
     return (
         user ? <h1>You are already logged in</h1> :
