@@ -18,7 +18,7 @@
         const [categories, setCategories] = useState([])
         const [oneCategory, setOneCategory] = useState({}); 
         useEffect(() => {
-            fetch('http://localhost:5000/categories')
+            fetch('https://news-server-codewithhasib.vercel.app/categories')
                 .then(res => res.json())
                 .then(data => setCategories(data))
                 .catch(err => console.log(err))

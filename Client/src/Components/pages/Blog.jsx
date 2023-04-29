@@ -14,7 +14,7 @@ const Blog = () => {
     const [singleNews, setSingleNews] = useState({});
     const [threeNews, setThreeNews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/news')
+        fetch('https://news-server-codewithhasib.vercel.app/news')
             .then(res => res.json())
             .then(data => setNews(data))
     }, [])

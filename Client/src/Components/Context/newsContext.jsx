@@ -8,7 +8,7 @@ const NewsContext = ({ children }) => {
 
     useEffect(() => {
         
-        fetch('http://localhost:5000/news/')
+        fetch('https://news-server-codewithhasib.vercel.app/news/')
         .then(res => res.json())
         .then(data => setNewses(data))
     },[]);
