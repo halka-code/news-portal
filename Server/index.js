@@ -15,6 +15,15 @@ app.get('/categories', (req, res) => {
 app.get('/news'  , (req , res) => { 
     res.send(news)
 })
+app.get('/infiniteScroll/:limit' , (req , res) => {
+   let limit = req.params.limit ;
+    if(limit > news.length) {
+        limit = news.length ;
+    }
+    // console.log(Number(limit))
+    const data = news.slice(0 , limit) ;
+    res.send(data)
+})
 
 app.listen(port, () => {
     console.log(`Port is running on ${port} number port`)
