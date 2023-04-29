@@ -12,3 +12,5 @@
 |React Infinite Scroll Component | 6.1.0 |
 | React Router Dom |6.10.0|
 |React Spinners | 0.13.8 | 
+
+[Live Link](https://news-dragon-731d2.web.app/)
